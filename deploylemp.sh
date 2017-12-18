@@ -15,6 +15,7 @@ sudo mysql_secure_installation
 sudo apt-get install fail2ban psad rkhunter chkrootkit -y
 sudo groupadd admin
 sudo usermod -a -G admin $username
+sudo dpkg-statoverride --update --add root admin 4750 /bin/su
 sudo su -c "echo 'tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0' >> /etc/fstab"
 sudo su -c "echo 'nospoof on' >> /etc/host.conf"
 find /var/www/html \( -type f -execdir chmod 644 {} \; \) \
