@@ -1,13 +1,20 @@
 #!/bin/bash
+#we can run this script as root with sudo, but we do not want the to put the username as root
+until [[ $username != "" && $username != root ]]; do
+read -p "Please enter your username: " username
+done
 sudo apt-get update && sudo apt-get dist-upgrade -y
+#sudo nano /etc/ssh/sshd_config
+#sudo apt-get install lamp-server
 sudo ufw allow 80
 sudo ufw allow 443
 sudo apt-get install openssh-server nginx apache2-utils mysql-server php7.0 php7.0-curl php7.0-cgi php-fpm php-mcrypt php-mysql php-dom php-mbstring php-zip unzip -y
+#sudo apt-get install php7.0-xml libxslt1.1
 sudo mysql_secure_installation
+#done with installing LAMP, now it is time to secure the server
 sudo apt-get install fail2ban psad rkhunter chkrootkit -y
 sudo groupadd admin
-sudo usermod -a -G admin ken
-sudo dpkg-statoverride --update --add root admin 4750 /bin/su
+sudo usermod -a -G admin $username
 sudo su -c "echo 'tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0' >> /etc/fstab"
 sudo su -c "echo 'nospoof on' >> /etc/host.conf"
 find /var/www/html \( -type f -execdir chmod 644 {} \; \) \
