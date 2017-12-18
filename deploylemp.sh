@@ -1,5 +1,5 @@
 #!/bin/bash
-#we can run this script as root with sudo, but we do not want the to put the username as root
+#we can run this script as root with sudo, but we do not want to put the username as root
 until [[ $username != "" && $username != root ]]; do
 read -p "Please enter your username: " username
 done
