@@ -4,12 +4,10 @@ until [[ $username != "" && $username != root ]]; do
 read -p "Please enter your username: " username
 done
 sudo apt-get update && sudo apt-get dist-upgrade -y
-#sudo nano /etc/ssh/sshd_config
-#sudo apt-get install lamp-server
 sudo ufw allow 80
 sudo ufw allow 443
 sudo apt-get install openssh-server nginx apache2-utils mysql-server php7.0 php7.0-curl php7.0-cgi php-fpm php-mcrypt php-mysql php-dom php-mbstring php-zip unzip -y
-#sudo apt-get install php7.0-xml libxslt1.1
+sudo apt-get install php7.0-xml libxslt1.1 -y
 sudo mysql_secure_installation
 #done with installing LAMP, now it is time to secure the server
 sudo apt-get install fail2ban psad rkhunter chkrootkit -y
