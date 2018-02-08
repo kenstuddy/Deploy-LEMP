@@ -35,10 +35,10 @@ sudo find /var/www/html \( -type f -execdir chmod 644 {} \; \) \
                   -o \( -type d -execdir chmod 711 {} \; \)
 sudo chown -R www-data:www-data /var/www/html
 sudo service nginx restart
-sudo chkrootkit
-sudo rkhunter --update
-sudo rkhunter --propupd
-sudo rkhunter --check
-sudo apt-get install wapiti -y
+#sudo chkrootkit
+#sudo rkhunter --update
+#sudo rkhunter --propupd
+#sudo rkhunter --check
+#sudo apt-get install wapiti -y
 #wapiti http://example.org -n 10 -b folder
 sudo ufw enable
