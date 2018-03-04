@@ -10,7 +10,7 @@ read -p "Please enter your username: " username
 done
 #Add repository for PHP 7.2
 sudo add-apt-repository ppa:ondrej/php -y
-#Add repository for NodeJS LTS 6.x
+#Add repository for Node.js LTS 6.x
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo ufw allow 80
