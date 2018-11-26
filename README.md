@@ -3,6 +3,7 @@ This is a script used for deploying LEMP (Linux, Nginx, MySQL, PHP) on Debian-ba
 
 # Requirements
 Debian 9 or newer
+
 Ubuntu 16.04 or newer
 
 # How To Install
