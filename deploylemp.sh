@@ -19,7 +19,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo ufw allow 80
 sudo ufw allow 443
 sudo ufw allow 22
-sudo apt-get install uptimed nodejs p7zip-full openssh-server nginx apache2-utils mysql-server php7.3 php7.3-curl php7.3-cgi php7.3-gd php-fpm php-mysql php7.3-dom php7.3-mbstring php-zip unzip php7.3-xml php7.3-zip libxslt1.1 php7.3-sqlite3 webp php-imagick -y
+sudo apt-get install uptimed nodejs p7zip-full openssh-server nginx apache2-utils mysql-server php7.4 php7.4-curl php7.4-cgi php7.4-gd php-fpm php-mysql php7.4-dom php7.4-mbstring php-zip unzip php7.4-xml php7.4-zip libxslt1.1 php7.4-sqlite3 webp php-imagick -y
 sudo mysql_secure_installation
 #Done with installing LAMP, now it is time to secure the server
 sudo apt-get install fail2ban psad rkhunter chkrootkit -y
@@ -36,10 +36,14 @@ sudo chown -R www-data:www-data /var/www/html
 sudo service nginx restart
 sudo ufw enable
 
+#To enable php 7.4
+sudo update-alternatives --set php /usr/bin/php7.4
+sudo update-alternatives --set phar /usr/bin/phar7.4
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.4
 #To enable php 7.3
-sudo update-alternatives --set php /usr/bin/php7.3
-sudo update-alternatives --set phar /usr/bin/phar7.3
-sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.3
+#sudo update-alternatives --set php /usr/bin/php7.3
+#sudo update-alternatives --set phar /usr/bin/phar7.3
+#sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.3
 #To enable php 7.2
 #sudo update-alternatives --set php /usr/bin/php7.2
 #sudo update-alternatives --set phar /usr/bin/phar7.2
