@@ -11,7 +11,7 @@ Ubuntu 16.04 or newer
 # How To Install
 Open up a terminal window (or SSH session) on Linux and download the script using wget
 
-```wget https://github.com/kenstuddy/Deploy-LEMP/blob/master/deploylemp.sh```
+```wget https://raw.githubusercontent.com/ironstar94/Deploy-LEMP/master/deploylemp.sh```
 
 Execute the script as root
 
